@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="200" height="80">
+  <!-- ACA Badge -->
+  <rect x="0" y="0" width="90" height="80" rx="10" fill="#FFD600"/>
+  <text x="45" y="32" font-family="Arial Black,sans-serif" font-weight="900" font-size="28" fill="#CC0000" text-anchor="middle" dominant-baseline="middle">ACA</text>
+  <text x="45" y="60" font-family="Arial,sans-serif" font-weight="700" font-size="7" fill="#CC0000" text-anchor="middle" dominant-baseline="middle">ASSOC. COMUNITÁRIA ANANÁS</text>
+  <!-- Cidade FM Badge -->
+  <circle cx="145" cy="40" r="35" fill="#CC0000" stroke="#FFD600" stroke-width="3"/>
+  <text x="145" y="22" font-family="Arial,sans-serif" font-weight="900" font-size="8" fill="#FFD600" text-anchor="middle" dominant-baseline="middle">RÁDIO</text>
+  <text x="145" y="35" font-family="Arial Black,sans-serif" font-weight="900" font-size="13" fill="#FFD600" text-anchor="middle" dominant-baseline="middle">CIDADE</text>
+  <text x="145" y="49" font-family="Arial Black,sans-serif" font-weight="900" font-size="13" fill="#FFD600" text-anchor="middle" dominant-baseline="middle">FM</text>
+  <text x="145" y="62" font-family="Arial,sans-serif" font-weight="700" font-size="8" fill="#FFD600" text-anchor="middle" dominant-baseline="middle">87,9</text>
+</svg>
