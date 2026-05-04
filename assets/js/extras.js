@@ -77,15 +77,15 @@ const TEMPO_ANANAS = {
   temp: 34,
   sensacao: 38,
   condicao: 'Ensolarado',
-  icon: '☀️',
+  icon: '<i class="fa-solid fa-sun"></i>',
   umidade: 62,
   vento: '14 km/h',
   previsao: [
-    { dia: 'Seg', icon: '☀️', max: 35, min: 24 },
-    { dia: 'Ter', icon: '🌤️', max: 33, min: 23 },
-    { dia: 'Qua', icon: '⛅', max: 31, min: 22 },
-    { dia: 'Qui', icon: '🌦️', max: 29, min: 22 },
-    { dia: 'Sex', icon: '🌧️', max: 28, min: 21 },
+    { dia: 'Seg', icon: '<i class="fa-solid fa-sun"></i>',           max: 35, min: 24 },
+    { dia: 'Ter', icon: '<i class="fa-solid fa-cloud-sun"></i>',     max: 33, min: 23 },
+    { dia: 'Qua', icon: '<i class="fa-solid fa-cloud"></i>',         max: 31, min: 22 },
+    { dia: 'Qui', icon: '<i class="fa-solid fa-cloud-rain"></i>',    max: 29, min: 22 },
+    { dia: 'Sex', icon: '<i class="fa-solid fa-cloud-showers-heavy"></i>', max: 28, min: 21 },
   ]
 };
 
