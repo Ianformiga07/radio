@@ -1466,10 +1466,210 @@ input[type="range"].volume-slider::-webkit-slider-thumb {
   }
 }
 
+/* ═══════════════════════════════════════════════════════════
+   PUBLICIDADE — 3 FORMATOS
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── FORMATO 1: Spot de Seção ─────────────────────────────── */
+.pub-spot {
+  background: var(--bg-card);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 0;
+  position: relative;
+}
+.pub-spot-inner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.pub-spot-badge {
+  width: 42px; height: 42px;
+  border-radius: var(--radius);
+  background: var(--pub-cor, var(--vermelho));
+  display: flex; align-items: center; justify-content: center;
+  color: #fff;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+.pub-spot-body {
+  flex: 1;
+  min-width: 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.pub-spot-empresa {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--txt-primary);
+  line-height: 1.2;
+}
+.pub-spot-slogan {
+  font-size: 0.78rem;
+  color: var(--txt-secondary);
+  line-height: 1.4;
+}
+.pub-spot-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+.pub-spot-tel {
+  font-size: 0.78rem;
+  color: var(--txt-muted);
+  font-weight: 600;
+  display: flex; align-items: center; gap: 5px;
+}
+.pub-spot-cta {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 18px;
+  background: var(--pub-cor, var(--vermelho));
+  color: #fff;
+  border-radius: 100px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: var(--trans);
+  white-space: nowrap;
+}
+.pub-spot-cta:hover { opacity: 0.88; transform: translateY(-1px); }
+
+/* Label "Publi" pequeno */
+.pub-label-ad {
+  position: absolute;
+  top: 6px; right: 10px;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--txt-muted);
+  background: var(--bg-section-alt);
+  padding: 2px 6px;
+  border-radius: 3px;
+  border: 1px solid var(--border);
+}
+
+@media (max-width: 560px) {
+  .pub-spot-tel { display: none; }
+  .pub-spot-inner { gap: 12px; }
+  .pub-spot-cta { padding: 7px 14px; font-size: 0.72rem; }
+}
+
+/* ── FORMATO 2: Patrocinador de Programa ─────────────────── */
+.pub-patrocinador {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  margin-top: 8px;
+  background: var(--vermelho-bg);
+  background: color-mix(in srgb, var(--pub-cor, var(--vermelho)) 8%, transparent);
+  border: 1px solid var(--border);
+  border: 1px solid color-mix(in srgb, var(--pub-cor, var(--vermelho)) 25%, transparent);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: var(--trans);
+  grid-column: 1 / -1; /* ocupa as 3 colunas do prog-item */
+}
+.pub-patrocinador:hover {
+  background: var(--bg-section-alt);
+  background: color-mix(in srgb, var(--pub-cor, var(--vermelho)) 14%, transparent);
+}
+.pub-patrocinador-chamada {
+  font-size: 0.65rem;
+  color: var(--txt-muted);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.pub-patrocinador-empresa {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--pub-cor, var(--vermelho));
+  flex: 1;
+}
+.pub-patrocinador-icon {
+  font-size: 0.62rem;
+  color: var(--pub-cor, var(--vermelho));
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+
+/* ── FORMATO 3: Banner Contextual no Clima ────────────────── */
+.pub-banner-clima {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  margin-top: 14px;
+  background: var(--amarelo-bg);
+  background: color-mix(in srgb, var(--pub-cor, var(--amarelo)) 9%, transparent);
+  border: 1px solid var(--border);
+  border: 1px solid color-mix(in srgb, var(--pub-cor, var(--amarelo)) 30%, transparent);
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: var(--trans);
+  position: relative;
+  overflow: hidden;
+}
+.pub-banner-clima::before {
+  content: '';
+  position: absolute; left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--pub-cor, var(--amarelo));
+  border-radius: 2px 0 0 2px;
+}
+.pub-banner-clima:hover {
+  background: color-mix(in srgb, var(--pub-cor, var(--amarelo)) 15%, transparent);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+.pub-banner-clima-icon {
+  font-size: 1.4rem;
+  color: var(--pub-cor, var(--amarelo));
+  flex-shrink: 0;
+  width: 28px;
+  text-align: center;
+}
+.pub-banner-clima-body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.pub-banner-clima-body strong {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--pub-cor, var(--amarelo));
+  display: block;
+  line-height: 1.2;
+}
+.pub-banner-clima-body span {
+  font-size: 0.72rem;
+  color: var(--txt-secondary);
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.pub-banner-clima .pub-label-ad {
+  position: static;
+  font-size: 0.55rem;
+  align-self: flex-start;
+  flex-shrink: 0;
+}
+
 /* ── Print: esconde elementos desnecessários ─────────────── */
 @media print {
   .top-bar, #nav, .nav-mobile, .player-bar, .whatsapp-float,
-  .btn-ouvir-nav, .hero-actions, .stats-strip { display: none !important; }
+  .btn-ouvir-nav, .hero-actions, .stats-strip,
+  .pub-spot, .pub-patrocinador, .pub-banner-clima { display: none !important; }
   body { padding: 0; color: #000; background: #fff; }
   .hero { background: #f0f0f0 !important; }
 }
