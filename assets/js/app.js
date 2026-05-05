@@ -279,9 +279,6 @@ function renderHome() {
       </div>
     </section>
 
-    <!-- PUBLICIDADE: SPOT 1 (entre Notícias e Programação) -->
-    ${renderSpotSecao(0)}
-
     <!-- PROGRAMAÇÃO RESUMIDA -->
     <section class="section section-light">
       <div class="container">
@@ -365,8 +362,6 @@ function renderHome() {
                 </div>
               `).join('')}
             </div>
-            <!-- PUBLICIDADE: Banner Contextual de Clima -->
-            ${renderBannerClima(TEMPO_ANANAS.temp)}
           </div>
 
         </div>
@@ -388,9 +383,6 @@ function renderHome() {
         </div>
       </div>
     </section>
-
-    <!-- PUBLICIDADE: SPOT 2 (entre Mural e Ouvinte do Mês) -->
-    ${renderSpotSecao(2)}
 
     <!-- OUVINTE DO MÊS -->
     <section class="section section-light">
@@ -448,7 +440,7 @@ function renderHome() {
     const progs = diaData ? diaData.programas.slice(0,5) : [];
     progEl.innerHTML = `
       <div class="prog-lista">
-        ${progs.map((p, idx) => `
+        ${progs.map(p => `
           <div class="prog-item ${atual && p.id===atual.id?'agora':''}">
             <div class="prog-horario">${p.hora}<span style="font-size:0.7rem;color:var(--txt-muted);display:block;font-weight:400">até ${p.fim}</span></div>
             <div>
@@ -456,7 +448,6 @@ function renderHome() {
               <div class="prog-locutor"><i class="fa-solid fa-microphone" style="margin-right:4px;color:var(--vermelho)"></i>${p.locutor}</div>
             </div>
             ${atual && p.id===atual.id ? '<span class="badge-agora">Agora</span>' : p.ao_vivo ? '<span class="badge-ao-vivo">Ao Vivo</span>' : '<span></span>'}
-            ${renderPatrocinadorPrograma(idx)}
           </div>
         `).join('')}
       </div>
@@ -516,7 +507,7 @@ function renderProgramacao() {
     const atual = getProgramaAtual();
     content.innerHTML = `
       <div class="prog-lista">
-        ${diaData.programas.map((p, pIdx) => `
+        ${diaData.programas.map(p => `
           <div class="prog-item ${atual && p.id===atual.id && idx===diaAtualIdx?'agora':''}">
             <div class="prog-horario">${p.hora}<span style="color:var(--txt-muted);font-size:0.7rem;display:block;font-weight:400">até ${p.fim}</span></div>
             <div>
@@ -524,7 +515,6 @@ function renderProgramacao() {
               <div class="prog-locutor"><i class="fa-solid fa-microphone" style="margin-right:4px;color:var(--vermelho)"></i>com ${p.locutor}</div>
             </div>
             ${atual && p.id===atual.id && idx===diaAtualIdx ? '<span class="badge-agora">Agora</span>' : p.ao_vivo ? '<span class="badge-ao-vivo">Ao Vivo</span>' : '<span></span>'}
-            ${renderPatrocinadorPrograma(pIdx)}
           </div>
         `).join('')}
       </div>
